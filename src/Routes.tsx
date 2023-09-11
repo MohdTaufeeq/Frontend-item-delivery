@@ -4,6 +4,7 @@ import { Home, Error404 } from "./pages";
 import { Loader } from "./components/shared";
 import Layout from "./components/Layout";
 import Checkout from "./components/cart/Checkout";
+import Confirm from "./components/cart/Confirm";
 const ProductView = React.lazy(() => import("./pages/ProductView"));
 
 const AppWithRouting = () => {
@@ -25,6 +26,10 @@ const AppWithRouting = () => {
       <Route
         path="/checkout"
         element={<Layout noFooter={true} component={<Checkout />} />}
+      />
+      <Route
+        path="/confirm"
+        element={<Layout noFooter={true} component={<Confirm />} />}
       />
       <Route
         path="*"

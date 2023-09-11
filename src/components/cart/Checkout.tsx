@@ -1,60 +1,64 @@
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { hide as hideModal } from "../../store/modal";
 import { hideCart } from "../../store/ui";
+import { Link } from "react-router-dom";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { useState } from "react";
-
 
 const Checkout = () => {
   const billAmount = useAppSelector((state) => state.cart.billAmount);
   const cart = useAppSelector((state) => state.cart);
 
-  const [firstName, setfirstName] = useState("")
-  const [lastName, setlastName] = useState("")
-  const [email, setemail] = useState("")
-  const [mobileNumber, setmobileNumber] = useState("")
-  const [address, setaddress] = useState("")
-  const [city, setcity] = useState("")
-  const [zipcode, setzipcode] = useState("")
-  const [nameOnCard, setnameOnCard] = useState("")
-  const [cardNumber, setcardNumber] = useState("")
-  const [expiryDate, setexpiryDate] = useState("")
-  const [cvv, setcvv] = useState("")
-
-
+  const [firstName, setfirstName] = useState("");
+  const [lastName, setlastName] = useState("");
+  const [email, setemail] = useState("");
+  const [mobileNumber, setmobileNumber] = useState("");
+  const [address, setaddress] = useState("");
+  const [city, setcity] = useState("");
+  const [zipcode, setzipcode] = useState("");
+  const [nameOnCard, setnameOnCard] = useState("");
+  const [cardNumber, setcardNumber] = useState("");
+  const [expiryDate, setexpiryDate] = useState("");
+  const [cvv, setcvv] = useState("");
 
   const handlePayNow = async () => {
-    const res = await fetch('https://red-thoughtful-moth.cyclic.app/api/saveItem', {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-        },
-      body: JSON.stringify({
+    try {
+      const res = await fetch(
+        "https://red-thoughtful-moth.cyclic.app/api/saveItem",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            mobileNumber: mobileNumber,
+            address: address,
+            city: city,
+            zipcode: zipcode,
+            nameOnCard: nameOnCard,
+            cardNumber: cardNumber,
+            expiryDate: expiryDate,
+            cvv: cvv,
+            billAmount: billAmount,
+          }),
+        }
+      );
+
+      console.log({
         firstName: firstName,
         lastName: lastName,
-        email: email,
-        mobileNumber: mobileNumber,
-        address: address,
-        city: city,
-        zipcode: zipcode,
-        nameOnCard: nameOnCard,
-        cardNumber: cardNumber,
-        expiryDate: expiryDate,
-        cvv: cvv,
-        billAmount: billAmount
-      })
-    })
-  
-    console.log({
-      firstName: firstName,
-      lastName: lastName,
-      billAmount: billAmount
-    })
-    const data = await res.json();
-    console.log(data);
-  }
+        billAmount: billAmount,
+      });
+      const data = await res.json();
+      console.log(data);
+    } catch (e) {
+      // console.log(e.message);
+    }
+  };
 
-  
   // console.log("CHECOUT COMPEONET CART:", cart)
   const dispatch = useAppDispatch();
 
@@ -110,7 +114,7 @@ const Checkout = () => {
                   max="96"
                   required
                   value={email}
-                    onChange={(e) => setemail(e.target.value)}
+                  onChange={(e) => setemail(e.target.value)}
                 />
               </div>
             </div>
@@ -125,7 +129,7 @@ const Checkout = () => {
                   max="10"
                   required
                   value={mobileNumber}
-                    onChange={(e) => setmobileNumber(e.target.value)}
+                  onChange={(e) => setmobileNumber(e.target.value)}
                 />
               </div>
             </div>
@@ -139,7 +143,7 @@ const Checkout = () => {
                   className="w-full bg-transparent outline-none"
                   required
                   value={address}
-                    onChange={(e) => setaddress(e.target.value)}
+                  onChange={(e) => setaddress(e.target.value)}
                 />
               </div>
             </div>
@@ -186,7 +190,7 @@ const Checkout = () => {
                   className="w-full bg-transparent outline-none"
                   required
                   value={nameOnCard}
-                    onChange={(e) => setnameOnCard(e.target.value)}
+                  onChange={(e) => setnameOnCard(e.target.value)}
                 />
               </div>
             </div>
@@ -228,7 +232,7 @@ const Checkout = () => {
                   max="23"
                   required
                   value={cardNumber}
-                    onChange={(e) => setcardNumber(e.target.value)}
+                  onChange={(e) => setcardNumber(e.target.value)}
                 />
               </div>
               <span
@@ -266,7 +270,7 @@ const Checkout = () => {
                       max="3"
                       required
                       value={cvv}
-                    onChange={(e) => setcvv(e.target.value)}
+                      onChange={(e) => setcvv(e.target.value)}
                     />
                   </div>
                 </div>
@@ -302,7 +306,9 @@ const Checkout = () => {
 
           <div className="flex items-center justify-between p-1">
             <p className="font-bold text-xl text-gray-500">Total</p>
-            <p className="font-semibold  text-orange-400 text-xl">₹{billAmount}</p>
+            <p className="font-semibold  text-orange-400 text-xl">
+              ₹{billAmount}
+            </p>
           </div>
           <hr />
 
@@ -313,10 +319,14 @@ const Checkout = () => {
                 Use cash on delivery in case of card transaction failure
               </label>
             </div>
-
-            <button onClick={handlePayNow} className="p-2 text-white bg-green-500 rounded-md">
-              Pay now
-            </button>
+            <Link to="/confirm">
+              <button
+                onClick={handlePayNow}
+                className="p-2 ml-20 text-white bg-green-500 rounded-md"
+              >
+                Pay now
+              </button>
+            </Link>
           </div>
         </div>
       </div>
