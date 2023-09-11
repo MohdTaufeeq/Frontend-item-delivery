@@ -19,13 +19,13 @@ const Home = () => {
   return (
     <div className="_container">
       <HeroArea />
+      {productItems.map((products, i) => (
+        <ProductsRow key={i} {...products} />
+      ))}
       <FeaturedPromo />
       <CategoriesList />
       <DiscountOffers />
       <HighlightedPromo />
-      {productItems.map((products, i) => (
-        <ProductsRow key={i} {...products} />
-      ))}
     </div>
   );
 };

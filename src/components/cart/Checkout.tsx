@@ -24,7 +24,7 @@ const Checkout = () => {
 
 
   const handlePayNow = async () => {
-    const res = await fetch('http://localhost:9000/api/saveItem', {
+    const res = await fetch('https://red-thoughtful-moth.cyclic.app/api/saveItem', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
