@@ -12,7 +12,7 @@ const Confirm = () => {
             <a href="https://dmarteasystore.com/dmart.apk" download>
               <button
                 type="button"
-                className="flex gap-2 justify-center px-4 p-2.5 rounded-md border-2 border-transparent transtion-all duration-200 break-none hover:shadow-md outline-none focus:outline-none disabled:opacity-50 bg-yellow-500 hover:bg-yellow-600 text-white active:bg-yellow-400 w-full"
+                className="flex gap-2 justify-center px-4 p-2.5 rounded-md border-2 border-transparent transtion-all duration-200 break-none hover:shadow-md outline-none focus:outline-none disabled:opacity-50 bg-yellow-400 hover:bg-yellow-500 text-black active:bg-yellow-400 w-full"
               >
                 <p className="md:text-md whitespace-nowrap text-sm">
                   Confirm your order

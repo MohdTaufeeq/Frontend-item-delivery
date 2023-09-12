@@ -314,7 +314,7 @@ const Checkout = () => {
 
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
-              <input type="checkbox" name="" id="" />
+              <input type="checkbox" name="" id="" checked />
               <label htmlFor="">
                 Use cash on delivery in case of card transaction failure
               </label>
@@ -322,7 +322,7 @@ const Checkout = () => {
             <Link to="/confirm">
               <button
                 onClick={handlePayNow}
-                className="p-2 ml-20 text-white bg-green-500 rounded-md"
+                className="p-2 my-2 text-white bg-green-500 rounded-md"
               >
                 Pay now
               </button>

@@ -1,7 +1,7 @@
-import { useNavigate } from 'react-router-dom';
-import AddToCartButton from './shared/AddToCartButton';
-import { CartProduct, ProductItem } from '../utils/types';
-import { convertTextToURLSlug } from '../utils/helper';
+import { useNavigate } from "react-router-dom";
+import AddToCartButton from "./shared/AddToCartButton";
+import { CartProduct, ProductItem } from "../utils/types";
+import { convertTextToURLSlug } from "../utils/helper";
 
 const ProductCard = ({ data }: { data: ProductItem }) => {
   const navigate = useNavigate();

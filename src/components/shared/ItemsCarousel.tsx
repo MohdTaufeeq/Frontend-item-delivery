@@ -1,9 +1,9 @@
-import Carousel from 'react-multi-carousel';
-import { shuffleItems } from '../../utils/helper';
-import { ProductItem } from '../../utils/types';
-import CarouselButtonGroup from '../CarouselButtonGroup';
-import ProductCard from '../ProductCard';
-import 'react-multi-carousel/lib/styles.css';
+import Carousel from "react-multi-carousel";
+import { shuffleItems } from "../../utils/helper";
+import { ProductItem } from "../../utils/types";
+import CarouselButtonGroup from "../CarouselButtonGroup";
+import ProductCard from "../ProductCard";
+import "react-multi-carousel/lib/styles.css";
 
 type Props = {
   topItems: ProductItem[];
@@ -48,8 +48,8 @@ const responsive = {
   },
   minimobile: {
     breakpoint: { max: 420, min: 0 },
-    items: 1,
-    slidesToSlide: 1,
+    items: 2,
+    slidesToSlide: 2,
     partialVisibilityGutter: -20,
   },
 };
