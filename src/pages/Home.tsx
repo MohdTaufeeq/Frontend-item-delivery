@@ -5,8 +5,8 @@ import {
   FeaturedPromo,
   HighlightedPromo,
   ProductsRow,
-} from '../components/home';
-import Misc from '../lib/data/layout.json';
+} from "../components/home";
+import Misc from "../lib/data/layout.json";
 
 const Home = () => {
   const productItems: any[] = Misc.filter((item) => item.type === 77).map(
@@ -17,7 +17,7 @@ const Home = () => {
   );
 
   return (
-    <div className="_container">
+    <div className="_container" style={{ overflow: "hidden" }}>
       <HeroArea />
       {productItems.map((products, i) => (
         <ProductsRow key={i} {...products} />
