@@ -25,7 +25,7 @@ const responsive = {
   mobile: {
     breakpoint: { max: 500, min: 360 },
     items: 2,
-    slidesToSlide: 2,
+    slidesToSlide: 1,
     partialVisibilityGutter: -20,
   },
   minimobile: {

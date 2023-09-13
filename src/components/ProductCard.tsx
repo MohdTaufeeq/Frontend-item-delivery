@@ -25,7 +25,7 @@ const ProductCard = ({ data }: { data: ProductItem }) => {
 
   return (
     <div
-      className="_card h-[270px] w-[180px] relative flex cursor-pointer mb-2 mx-auto sm:mx-0"
+      className="_card h-[260px] w-[166px] relative flex cursor-pointer mb-2 mx-auto sm:mx-0 ml-[0px]"
       onClick={handleProductClick}
     >
       {data.offer && (
@@ -54,7 +54,7 @@ const ProductCard = ({ data }: { data: ProductItem }) => {
               <span className="text-[14px] _text-default">₹{mrp}</span>
             </div>
           )}
-          <div className="h-9 w-[90px]">
+          <div className="h-9 w-[70px]">
             <AddToCartButton product={cartProduct} />
           </div>
         </div>
