@@ -37,7 +37,7 @@ const ProductCard = ({ data }: { data: ProductItem }) => {
         <img src={image_url} alt="" className="h-full w-full p-2" />
       </div>
       <div className="overflow-hidden text-left flex flex-col mt-auto">
-        <div className="_text-default text-[13px] font-medium leading-tight line-clamp-2 mb-0.5">
+        <div className="_text-default text-[13px] font-medium leading-tight line-clamp-2 mb-1">
           {name}
         </div>
         <div className="text-sm _text-muted truncate mb-3">{unit}</div>
@@ -54,7 +54,7 @@ const ProductCard = ({ data }: { data: ProductItem }) => {
               <span className="text-[14px] _text-default">₹{mrp}</span>
             </div>
           )}
-          <div className="h-9 w-[70px]">
+          <div className="h-9 w-[80px]">
             <AddToCartButton product={cartProduct} />
           </div>
         </div>

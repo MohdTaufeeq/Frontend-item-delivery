@@ -50,7 +50,7 @@ const responsive = {
     breakpoint: { max: 420, min: 0 },
     items: 2,
     slidesToSlide: 2,
-    partialVisibilityGutter: -20,
+    partialVisibilityGutter: 10,
   },
 };
 
