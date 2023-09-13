@@ -38,7 +38,7 @@ const CartButtonBig = () => {
             </span>{" "}
           </span>
         </div>
-        <div className="ml-auto flex items-center font-bold">
+        <div className="ml-auto flex items-center font-bold" id="view-cart">
           View Cart <IoCaretForwardSharp size={18} className="ml-2" />
         </div>
       </div>
