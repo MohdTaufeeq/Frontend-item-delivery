@@ -13,19 +13,19 @@ import { hide as hideModal } from "../../store/modal";
 import { useEffect } from "react";
 
 const CartPanelItem = (props: CartItem) => {
-  useEffect(() => {
-    console.log("use");
-    const bd = document.querySelector("body")!;
-    bd.style.overflowY = "hidden";
+  // useEffect(() => {
+  //   console.log("use");
+  //   const bd = document.querySelector("body")!;
+  //   bd.style.overflowY = "hidden";
 
-    return () => {
-      bd.style.overflowY = "initial";
-    };
-  }, []);
+  //   return () => {
+  //     bd.style.overflowY = "initial";
+  //   };
+  // }, []);
 
   const { image, title, subTitle, price, mrp } = props.product;
   return (
-    <div className="flex p-4 gap-4 border-t _border-muted">
+    <div className="flex p-4 gap-4 border-t _border-muted ">
       <div>
         <div className="h-[72px] w-[72px] border rounded-[4px] overflow-hidden">
           <img src={image} alt="" className="h-full w-full" />
