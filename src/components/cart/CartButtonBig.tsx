@@ -14,7 +14,7 @@ const CartButtonBig = () => {
   const path = useLocation().pathname;
 
   useEffect(() => {
-    if (path === "/checkout") {
+    if (path === "/checkout" || path === "/confirm") {
       setIsHidden(true);
     } else {
       setIsHidden(false);
