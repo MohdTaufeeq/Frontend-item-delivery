@@ -24,10 +24,7 @@ const ProductCard = ({ data }: { data: ProductItem }) => {
   };
 
   return (
-    <div
-      className="_card h-[260px] w-[166px] relative flex cursor-pointer mb-2 mx-auto sm:mx-0 ml-[0px]"
-      onClick={handleProductClick}
-    >
+    <div className="_card h-[260px] w-[166px] relative flex cursor-pointer mb-2 mx-auto sm:mx-0 ml-[0px]">
       {data.offer && (
         <div className="absolute bg-blue-600 text-white px-3 py-1 text-xs font-medium -left-[1px] top-4 rounded-tr-xl rounded-br-xl uppercase">
           {data.offer}
@@ -62,5 +59,7 @@ const ProductCard = ({ data }: { data: ProductItem }) => {
     </div>
   );
 };
+
+// onClick={handleProductClick}
 
 export default ProductCard;
